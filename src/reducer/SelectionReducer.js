@@ -1,7 +1,7 @@
-export default (state = null, action) => {
+export default (state = [], action) => {
     switch (action.type) {
-        case 'SELECTED_LIBRARY':
-            console.log(action.payload, state);
+        case 'SELECTED_MOVIE':
+            // console.log(action.payload, state);
             return action.payload;
         default:
             return state;

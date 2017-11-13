@@ -5,25 +5,26 @@ import * as actions from './../actions'; //manggil lbh dr 1 return
 
 class ListItem extends Component {
     pressed() {                
-        this.props.selectLibrary(this.props.hasil.id); //dispatch
+        this.props.selectMovie(this.props.hasil.id); //dispatch
         console.log(this.props.idx, this.props.hasil.id);
     }
     
     renderLogic() {
         if (this.props.idx === this.props.hasil.id) {
             return (
-                <Text style={styles.fontDetail}>{this.props.hasil.description}</Text> 
+                <Text style={styles.fontDetail}>{this.props.hasil.overview}</Text> 
             );
         }
     }
 
     render() {
-        
+        console.log(this.props.hasil);
+        // console.log(toString(this.props.hasil));
         return (
             <TouchableHighlight onPress={this.pressed.bind(this)}>
             <View>
                 <View style={styles.titlebg}>              
-                    <Text style={styles.titleStyle}>{this.props.hasil.title}</Text>             
+                    <Text style={styles.titleStyle}>{this.props.hasil.original_title}</Text>             
                 </View>
                 <View style={styles.detailbg}>
                     {this.renderLogic()} 
